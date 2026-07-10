@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/projectstorage"
+    username: "psuser"
+    password: "psuser"
+    driver-class-name: "org.postgresql.Driver"
+
+
+file:
+  upload-dir: ./uploads

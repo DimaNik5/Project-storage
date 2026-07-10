@@ -1,0 +1,130 @@
+.repository-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .repository-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .repo-card {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s;
+  }
+  
+  .repo-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .repo-card h3 {
+    color: #0366d6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .repo-card p {
+    color: #586069;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .repo-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #586069;
+  }
+  
+  .repository-detail {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .repo-info-header {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .repo-description {
+    color: #586069;
+    margin: 1rem 0;
+  }
+  
+  .repo-stats {
+    display: flex;
+    gap: 1.5rem;
+    color: #586069;
+    font-size: 0.9rem;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e1e4e8;
+  }
+  
+  .tabs button {
+    background: none;
+    color: #586069;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+  
+  .tabs button.active {
+    color: #24292e;
+    border-bottom-color: #f9826c;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #586069;
+  }
+  
+  .error {
+    text-align: center;
+    padding: 2rem;
+    color: #cb2431;
+  }
+  
+  .no-repos {
+    text-align: center;
+    padding: 2rem;
+    color: #586069;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }

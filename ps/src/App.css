@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f6f8fa;
+  color: #24292e;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: #24292e;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left .logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Кнопки */
+button {
+  padding: 0.5rem 1rem;
+  background: #2ea44f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2c974b;
+}
+
+button:disabled {
+  background: #94d3a2;
+  cursor: not-allowed;
+}
+
+.logout-btn {
+  background: #cb2431;
+}
+
+.logout-btn:hover {
+  background: #a51d2b;
+}
+
+.login-btn {
+  background: #2ea44f;
+  padding: 0.5rem 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  color: #586069;
+  font-size: 1.5rem;
+  padding: 0;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #24292e;
+  background: none;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Modal Overlay - ЭТО ВАЖНО! */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);  /* Темный полупрозрачный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal */
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 440px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: #24292e;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #24292e;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0366d6;
+  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.error-message {
+  background: #ffeef0;
+  color: #cb2431;
+  padding: 0.75rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.modal-note {
+  text-align: center;
+  margin-top: 1rem;
+  color: #586069;
+  font-size: 0.85rem;
+}
+
+/* Repository Styles */
+.repository-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.repository-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.repo-card {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.repo-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-color: #0366d6;
+}
+
+.repo-card h3 {
+  color: #0366d6;
+  margin-bottom: 0.5rem;
+}
+
+.repo-card p {
+  color: #586069;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.repo-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #586069;
+}
+
+/* Repository Detail */
+.repository-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.repo-info-header {
+  background: white;
+  padding: 2rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.repo-description {
+  color: #586069;
+  margin: 1rem 0;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 1.5rem;
+  color: #586069;
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 0;
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.tabs button {
+  background: none;
+  color: #586069;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.tabs button:hover {
+  background: #f6f8fa;
+}
+
+.tabs button.active {
+  color: #24292e;
+  border-bottom-color: #f9826c;
+  font-weight: 500;
+}
+
+.tab-content {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+/* File Styles */
+.file-list {
+  padding: 1.5rem;
+}
+
+.file-actions {
+  margin-bottom: 1rem;
+}
+
+.file-upload {
+  background: #f6f8fa;
+  padding: 1rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.file-upload input[type="text"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+}
+
+.files-table {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.file-header,
+.file-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 0.75rem;
+  align-items: center;
+}
+
+.file-header {
+  background: #f6f8fa;
+  font-weight: bold;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.file-row {
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.file-row:last-child {
+  border-bottom: none;
+}
+
+.file-row:hover {
+  background: #f6f8fa;
+}
+
+.delete-btn {
+  background: #cb2431;
+}
+
+.delete-btn:hover {
+  background: #a51d2b;
+}
+
+.no-files,
+.no-repos {
+  text-align: center;
+  padding: 2rem;
+  color: #586069;
+}
+
+/* Comment Styles */
+.comment-section {
+  padding: 1.5rem;
+}
+
+.add-comment {
+  margin: 1rem 0;
+}
+
+.add-comment textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.comments-list {
+  margin-top: 1.5rem;
+}
+
+.comment {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #586069;
+}
+
+.login-prompt,
+.no-comments {
+  text-align: center;
+  padding: 2rem;
+  color: #586069;
+}
+
+/* User Profile */
+.user-profile {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-info {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.profile-info p {
+  margin-bottom: 0.5rem;
+}
+
+.edit-form {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.user-repositories h2 {
+  margin-bottom: 1rem;
+}
+
+/* Create Repository */
+.create-repository {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.create-repository form {
+  background: white;
+  padding: 2rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Utilities */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #586069;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #cb2431;
+}

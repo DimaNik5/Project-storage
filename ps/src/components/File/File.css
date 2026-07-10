@@ -1,0 +1,68 @@
+.file-list {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 0 0 6px 6px;
+  }
+  
+  .file-actions {
+    margin-bottom: 1rem;
+  }
+  
+  .file-upload {
+    background: #f6f8fa;
+    padding: 1rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .file-upload input {
+    margin: 0.5rem 0;
+  }
+  
+  .files-table {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .file-header,
+  .file-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 0.75rem;
+    align-items: center;
+  }
+  
+  .file-header {
+    background: #f6f8fa;
+    font-weight: bold;
+    border-bottom: 1px solid #e1e4e8;
+  }
+  
+  .file-row {
+    border-bottom: 1px solid #e1e4e8;
+  }
+  
+  .file-row:last-child {
+    border-bottom: none;
+  }
+  
+  .file-row:hover {
+    background: #f6f8fa;
+  }
+  
+  .delete-btn {
+    background: #cb2431;
+  }
+  
+  .delete-btn:hover {
+    background: #a51d2b;
+  }
+  
+  .no-files {
+    text-align: center;
+    padding: 2rem;
+    color: #586069;
+  }
