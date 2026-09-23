@@ -44,7 +44,7 @@ public class RepositoryController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/{repoId}")
+    @GetMapping("{repoId}")
     public ResponseEntity<?> getRepository(@PathVariable Long repoId) {
         Optional<Repository> repo = repositoryRepository.findById(repoId);
         if (repo.isPresent()) {

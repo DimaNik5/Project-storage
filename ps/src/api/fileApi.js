@@ -69,6 +69,11 @@ export const fileApi = {
     return response.data;
   },
 
+  checkWritePermission: async (repoId, userId) => {
+    const response = await api.get(`/repositories/${repoId}/permissions/${userId}`);
+    return response.data;
+  },
+
   createRepository: async (name, description, userId) => {
     const params = new URLSearchParams();
     params.append('name', name);
